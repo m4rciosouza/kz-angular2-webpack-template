@@ -1,4 +1,16 @@
-<main>
-  <h1>KZ Angular 2 template com WebPack</h1>
-  <img src="../../public/images/angular.png">
-</main>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+	<div class="navbar-header">
+	  <a class="navbar-brand" href="#">Kazale IT</a>
+	</div>
+	<div>
+	  <ul class="nav navbar-nav">
+	  	<li><a [routerLink]="['/']">Inicial</a></li>
+	  </ul>
+	</div>
+  </div>
+</nav>
+<br />
+<br />
+<br />
+<router-outlet></router-outlet>

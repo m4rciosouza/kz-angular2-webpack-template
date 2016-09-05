@@ -17,3 +17,5 @@ import '@angular/router';
 import 'rxjs';
 
 // Adicione outras bibliotecas aqui, como jQuery, Lodash, ou Bootstrap...
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.min.js'
