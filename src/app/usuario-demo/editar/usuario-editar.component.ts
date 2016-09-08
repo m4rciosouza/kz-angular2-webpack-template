@@ -9,14 +9,14 @@ import { Component } from '@angular/core';
 import { OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ROUTER_DIRECTIVES } from '@angular/router'; 
 
-import { Usuario } from '../shared/usuario.model';
-import { UsuarioService } from '../shared/usuario.service';
+import { Usuario, UsuarioService } from '../shared';
 
 @Component({
 	selector: 'kz-usuario-editar',
-	templateUrl: './usuario-editar.html',
+	templateUrl: './usuario-editar.component.html',
 	providers: [ UsuarioService ],
-	directives: [ ROUTER_DIRECTIVES ]
+	directives: [ ROUTER_DIRECTIVES ],
+	styleUrls: ['./usuario-editar.component.css']
 })
 export class UsuarioEditarComponent implements OnInit {
 

@@ -7,8 +7,7 @@
 
 import { Control } from '@angular/common';
 
-import { KzCpfValidator } from './kz-cpf.validator';
-import { KzCnpjValidator } from './kz-cnpj.validator';
+import { KzCpfValidator, KzCnpjValidator } from './';
 
 export class KzCpfCnpjValidator {
 

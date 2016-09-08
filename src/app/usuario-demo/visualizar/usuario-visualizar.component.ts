@@ -9,14 +9,14 @@ import { Component } from '@angular/core';
 import { OnInit } from '@angular/core';
 import { ROUTER_DIRECTIVES, ActivatedRoute } from '@angular/router';
 
-import { Usuario } from '../shared/usuario.model';
-import { UsuarioService } from '../shared/usuario.service';
+import { Usuario, UsuarioService } from '../shared';
 
 @Component({
 	selector: 'kz-aluno-visualizar',
-	templateUrl: './usuario-visualizar.html',
+	templateUrl: './usuario-visualizar.component.html',
 	providers: [ UsuarioService ],
-	directives: [ ROUTER_DIRECTIVES ]
+	directives: [ ROUTER_DIRECTIVES ],
+	styleUrls: ['./usuario-visualizar.component.css']
 })
 export class UsuarioVisualizarComponent implements OnInit {
 

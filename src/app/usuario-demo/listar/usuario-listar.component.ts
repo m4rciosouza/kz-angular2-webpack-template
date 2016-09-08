@@ -9,15 +9,15 @@ import { Component } from '@angular/core';
 import { OnInit } from '@angular/core';
 import { ROUTER_DIRECTIVES } from '@angular/router';
 
-import { Usuario } from '../shared/usuario.model';
-import { UsuarioService } from '../shared/usuario.service';
-import { ModalUtilComponent } from '../../shared/utils/modal-util.component';
+import { Usuario, UsuarioService } from '../shared';
+import { ModalUtilComponent } from '../../shared';
 
 @Component({
 	selector: 'kz-usuario-listar',
-	templateUrl: './usuario-listar.html',
+	templateUrl: './usuario-listar.component.html',
 	providers: [ UsuarioService ],
-	directives: [ ROUTER_DIRECTIVES, ModalUtilComponent ]
+	directives: [ ROUTER_DIRECTIVES, ModalUtilComponent ],
+	styleUrls: ['./usuario-listar.component.css']
 })
 export class UsuarioListarComponent implements OnInit {
 

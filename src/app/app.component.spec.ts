@@ -12,13 +12,13 @@ import { AppComponent } from './app.component';
 describe('App', () => {
 
   beforeEach(() => {
-    TestBed.configureTestingModule({ declarations: [AppComponent]});
+    TestBed.configureTestingModule({ 
+    	declarations: [ AppComponent ],
+    });
   });
 
   it ('deve criar o componente AppComponent', () => {
-    //let fixture = TestBed.createComponent(AppComponent);
-    //expect(fixture.componentInstance instanceof AppComponent).toBe(
-    //	true, 'deve criar o AppComponent');
+    //TODO 
   });
   
 });

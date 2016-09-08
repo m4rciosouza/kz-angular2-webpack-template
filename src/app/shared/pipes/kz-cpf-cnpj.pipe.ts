@@ -7,8 +7,7 @@
 
 import { Pipe, PipeTransform } from '@angular/core';
 
-import { KzCpfPipe } from './kz-cpf.pipe';
-import { KzCnpjPipe } from './kz-cnpj.pipe';
+import { KzCpfPipe, KzCnpjPipe } from './';
  
 @Pipe({
 	name: 'kz-cpf-cnpj'
