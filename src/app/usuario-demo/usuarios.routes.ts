@@ -7,10 +7,12 @@
 
 import { Routes } from '@angular/router'; 
 
-import { UsuarioListarComponent } from './listar/usuario-listar.component';
-import { UsuarioCadastrarComponent } from './cadastrar/usuario-cadastrar.component';
-import { UsuarioEditarComponent } from './editar/usuario-editar.component';
-import { UsuarioVisualizarComponent } from './visualizar/usuario-visualizar.component';
+import { 
+	UsuarioListarComponent,
+	UsuarioCadastrarComponent,
+	UsuarioEditarComponent,
+	UsuarioVisualizarComponent
+} from './';
 
 export const UsuariosRoutes: Routes = [
 	{ path: 'usuario-listar', component: UsuarioListarComponent }, 

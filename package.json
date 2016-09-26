@@ -6,7 +6,8 @@
     "start": "webpack-dev-server --inline --progress --port 8080",
     "test": "karma start",
     "build": "rimraf dist && webpack --config config/webpack.prod.js --progress --profile --bail",
-    "postinstall": "typings install"
+    "postinstall": "typings install",
+    "crud": "node ./scaffolding/crud-script.js"
   },
   "license": "MIT",
   "dependencies": {
@@ -27,6 +28,7 @@
   },
   "devDependencies": {
     "angular2-template-loader": "^0.4.0",
+    "copy-dir": "^0.3.0",
     "css-loader": "^0.23.1",
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.8.5",
@@ -40,9 +42,12 @@
     "karma-webpack": "^1.7.0",
     "null-loader": "^0.1.1",
     "phantomjs-prebuilt": "^2.1.7",
+    "prompt": "^1.0.0",
     "raw-loader": "^0.5.1",
+    "replace-in-file": "^2.0.1",
     "rimraf": "^2.5.2",
     "style-loader": "^0.13.1",
+    "to-absolute-path": "^1.0.0",
     "ts-loader": "^0.8.1",
     "typescript": "^1.8.10",
     "typings": "^1.0.4",
