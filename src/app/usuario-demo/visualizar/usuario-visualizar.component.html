@@ -10,6 +10,10 @@
             <th>Nome</th>
 			<td>{{ usuario.nome }}</td>
 		</tr>
+        <tr>
+            <th>Data Criação</th>
+            <td>{{ usuario.id | kzDataHoraBr }}</td>
+        </tr>
     </table>
 	<div class="text-center">
 		<a class="btn btn-default" [routerLink]="['/usuario-listar']">

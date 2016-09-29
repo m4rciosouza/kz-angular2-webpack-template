@@ -7,7 +7,7 @@
 
 /*#import { Component } from '@angular/core';
 import { OnInit } from '@angular/core';
-import { Router, ActivatedRoute, ROUTER_DIRECTIVES } from '@angular/router'; 
+import { Router, ActivatedRoute } from '@angular/router'; 
 
 import { #MODULO_CAP#, #MODULO_CAP#Service } from '../shared';
 
@@ -15,7 +15,6 @@ import { #MODULO_CAP#, #MODULO_CAP#Service } from '../shared';
 	selector: 'kz-#MODULO#-editar',
 	templateUrl: './#MODULO#-editar.component.html',
 	providers: [ #MODULO_CAP#Service ],
-	directives: [ ROUTER_DIRECTIVES ],
 	styleUrls: ['./#MODULO#-editar.component.css']
 })
 export class #MODULO_CAP#EditarComponent implements OnInit {

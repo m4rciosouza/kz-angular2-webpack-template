@@ -7,7 +7,6 @@
 
 import { Component } from '@angular/core';
 import { OnInit } from '@angular/core';
-import { ROUTER_DIRECTIVES } from '@angular/router';
 
 import { Usuario, UsuarioService } from '../shared';
 import { ModalUtilComponent } from '../../shared';
@@ -17,7 +16,7 @@ import { KzDataHoraBrPipe } from '../../shared/pipes';
 	selector: 'kz-usuario-listar',
 	templateUrl: './usuario-listar.component.html',
 	providers: [ UsuarioService ],
-	directives: [ ROUTER_DIRECTIVES, ModalUtilComponent ],
+	directives: [ ModalUtilComponent ],
 	styleUrls: ['./usuario-listar.component.css'],
 	pipes: [ KzDataHoraBrPipe ]
 })

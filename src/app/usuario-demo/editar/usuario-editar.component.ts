@@ -7,7 +7,7 @@
 
 import { Component } from '@angular/core';
 import { OnInit } from '@angular/core';
-import { Router, ActivatedRoute, ROUTER_DIRECTIVES } from '@angular/router'; 
+import { Router, ActivatedRoute } from '@angular/router'; 
 
 import { Usuario, UsuarioService } from '../shared';
 
@@ -15,7 +15,6 @@ import { Usuario, UsuarioService } from '../shared';
 	selector: 'kz-usuario-editar',
 	templateUrl: './usuario-editar.component.html',
 	providers: [ UsuarioService ],
-	directives: [ ROUTER_DIRECTIVES ],
 	styleUrls: ['./usuario-editar.component.css']
 })
 export class UsuarioEditarComponent implements OnInit {

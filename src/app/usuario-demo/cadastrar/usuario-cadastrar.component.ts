@@ -7,7 +7,7 @@
 
 import { Component } from '@angular/core';
 import { OnInit } from '@angular/core';
-import { Router, ROUTER_DIRECTIVES } from '@angular/router'; 
+import { Router } from '@angular/router'; 
 
 import { Usuario, UsuarioService } from '../shared';
 
@@ -15,7 +15,6 @@ import { Usuario, UsuarioService } from '../shared';
 	selector: 'kz-usuario-cadastrar',
 	templateUrl: './usuario-cadastrar.component.html',
 	providers: [ UsuarioService ],
-	directives: [ ROUTER_DIRECTIVES ],
 	styleUrls: ['./usuario-cadastrar.component.css']
 })
 export class UsuarioCadastrarComponent implements OnInit {

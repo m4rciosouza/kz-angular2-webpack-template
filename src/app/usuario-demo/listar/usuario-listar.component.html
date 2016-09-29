@@ -3,8 +3,9 @@
 <div>
     <table class="table table-striped">
         <tr>
-            <th>Nome</th>
+            <th>ID</th>
             <th>Email</th>
+            <th>Data Criação</th>
             <th class="text-right">
                 <a class="btn btn-success" 
                     [routerLink]="['/usuario-cadastrar']">
@@ -13,8 +14,9 @@
             </th>
         </tr>
         <tr *ngFor="let usuario of usuarios">
-            <td>{{ usuario.id | kzDataHoraBr }}</td>
+            <td>{{ usuario.id }}</td>
             <td>{{ usuario.nome }}</td>
+            <td>{{ usuario.id | kzDataHoraBr }}</td>
             <td class="text-right">
 				<a class="btn btn-warning" 
                     [routerLink]="['/usuario-visualizar/'+usuario.id]">

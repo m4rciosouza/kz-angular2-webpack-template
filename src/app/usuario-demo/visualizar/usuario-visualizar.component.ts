@@ -7,7 +7,8 @@
 
 import { Component } from '@angular/core';
 import { OnInit } from '@angular/core';
-import { ROUTER_DIRECTIVES, ActivatedRoute } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
+import { KzDataHoraBrPipe } from '../../shared/pipes';
 
 import { Usuario, UsuarioService } from '../shared';
 
@@ -15,8 +16,8 @@ import { Usuario, UsuarioService } from '../shared';
 	selector: 'kz-aluno-visualizar',
 	templateUrl: './usuario-visualizar.component.html',
 	providers: [ UsuarioService ],
-	directives: [ ROUTER_DIRECTIVES ],
-	styleUrls: ['./usuario-visualizar.component.css']
+	styleUrls: ['./usuario-visualizar.component.css'],
+	pipes: [ KzDataHoraBrPipe ]
 })
 export class UsuarioVisualizarComponent implements OnInit {
 

@@ -7,7 +7,7 @@
 
 /*#import { Component } from '@angular/core';
 import { OnInit } from '@angular/core';
-import { Router, ROUTER_DIRECTIVES } from '@angular/router'; 
+import { Router } from '@angular/router'; 
 
 import { #MODULO_CAP#, #MODULO_CAP#Service } from '../shared';
 
@@ -15,7 +15,6 @@ import { #MODULO_CAP#, #MODULO_CAP#Service } from '../shared';
 	selector: 'kz-#MODULO#-cadastrar',
 	templateUrl: './#MODULO#-cadastrar.component.html',
 	providers: [ #MODULO_CAP#Service ],
-	directives: [ ROUTER_DIRECTIVES ],
 	styleUrls: ['./#MODULO#-cadastrar.component.css']
 })
 export class #MODULO_CAP#CadastrarComponent implements OnInit {

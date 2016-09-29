@@ -7,7 +7,7 @@
 
 /*#import { Component } from '@angular/core';
 import { OnInit } from '@angular/core';
-import { ROUTER_DIRECTIVES, ActivatedRoute } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 import { #MODULO_CAP#, #MODULO_CAP#Service } from '../shared';
 
@@ -15,7 +15,6 @@ import { #MODULO_CAP#, #MODULO_CAP#Service } from '../shared';
 	selector: 'kz-#MODULO#-visualizar',
 	templateUrl: './#MODULO#-visualizar.component.html',
 	providers: [ #MODULO_CAP#Service ],
-	directives: [ ROUTER_DIRECTIVES ],
 	styleUrls: ['./#MODULO#-visualizar.component.css']
 })
 export class #MODULO_CAP#VisualizarComponent implements OnInit {

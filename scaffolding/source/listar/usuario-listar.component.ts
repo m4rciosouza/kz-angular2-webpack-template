@@ -7,7 +7,6 @@
 
 /*#import { Component } from '@angular/core';
 import { OnInit } from '@angular/core';
-import { ROUTER_DIRECTIVES } from '@angular/router';
 
 import { #MODULO_CAP#, #MODULO_CAP#Service } from '../shared';
 import { ModalUtilComponent } from '../../shared';
@@ -16,7 +15,7 @@ import { ModalUtilComponent } from '../../shared';
 	selector: 'kz-#MODULO#-listar',
 	templateUrl: './#MODULO#-listar.component.html',
 	providers: [ #MODULO_CAP#Service ],
-	directives: [ ROUTER_DIRECTIVES, ModalUtilComponent ],
+	directives: [ ModalUtilComponent ],
 	styleUrls: ['./#MODULO#-listar.component.css']
 })
 export class #MODULO_CAP#ListarComponent implements OnInit {
