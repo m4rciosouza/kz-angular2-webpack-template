@@ -29,6 +29,12 @@ npm run test
 npm run build
 ```
 
+### Gerando CRUD (estrutura básica dos arquivos de um novo módulo)
+
+```
+npm run crud
+```
+
 ### Atualizações
 
 Para se manter informado sobre as atualizações e novos recursos adicionado ao projeto, verifique o arquivo CHANGELOG.md encontrado na raíz do projeto.

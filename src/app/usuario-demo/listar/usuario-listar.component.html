@@ -13,7 +13,7 @@
             </th>
         </tr>
         <tr *ngFor="let usuario of usuarios">
-            <td>{{ usuario.id }}</td>
+            <td>{{ usuario.id | kzDataHoraBr }}</td>
             <td>{{ usuario.nome }}</td>
             <td class="text-right">
 				<a class="btn btn-warning" 

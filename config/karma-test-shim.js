@@ -15,6 +15,8 @@ require('zone.js/dist/zone');
 require('zone.js/dist/async-test');
 require('zone.js/dist/fake-async-test');
 
+require('moment/min/moment.min');
+
 var appContext = require.context('../src', true, /\.spec\.ts/);
 
 appContext.keys().forEach(appContext);
