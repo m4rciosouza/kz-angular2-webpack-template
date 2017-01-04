@@ -1,4 +1,4 @@
-# kz-angular2-webpack-template
+# kz-angular2-webpack-template[![Build Status](https://travis-ci.org/m4rciosouza/kz-angular2-webpack-template.svg?branch=master)](https://travis-ci.org/m4rciosouza/kz-angular2-webpack-template)
 ========
 
 ### Projeto template Angular 2 com WebPack
