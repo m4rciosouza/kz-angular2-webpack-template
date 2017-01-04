@@ -1,0 +1,113 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">Filtros (Pipes)</h3>
+  </div>
+  <div class="panel-body">
+	<div class="table-responsive">
+		<table class="table table-striped table-hover">
+			<tr>
+				<th>Filtro (Pipe)</th>
+				<th>Descrição</th>
+				<th>Utilização</th>
+				<th>Valor de entrada</th>
+				<th>Valor de saída</th>
+			</tr>
+			<tr>
+				<td>kzCep</td>
+				<td>Formata um CEP</td>
+				<td>{{ "{{'20563526' | kzCep}\}" }}</td>
+				<td>20563526</td>
+				<td>{{'20563526' | kzCep}}</td>
+			</tr>
+			<tr>
+				<td>kzCpf</td>
+				<td>Formata um CPF</td>
+				<td>{{ "{{'32545233587' | kzCpf}\}" }}</td>
+				<td>32545233587</td>
+				<td>{{'32545233587' | kzCpf}}</td>
+			</tr>
+			<tr>
+				<td>kzCnpj</td>
+				<td>Formata um CNPJ</td>
+				<td>{{ "{{'32545233587524' | kzCnpj}\}" }}</td>
+				<td>32545233587524</td>
+				<td>{{'32545233587524' | kzCnpj}}</td>
+			</tr>
+			<tr>
+				<td>kzCpfCnpj</td>
+				<td>Formata um CPF/CNPJ</td>
+				<td>{{ "{{'32545233587' | kzCpfCnpj}\}" }}</td>
+				<td>32545233587</td>
+				<td>{{'32545233587' | kzCpfCnpj}}</td>
+			</tr>
+			<tr>
+				<td>kzCpfCnpj</td>
+				<td>Formata um CPF/CNPJ</td>
+				<td>{{ "{{'32545233587524' | kzCpfCnpj}\}" }}</td>
+				<td>32545233587524</td>
+				<td>{{'32545233587524' | kzCpfCnpj}}</td>
+			</tr>
+			<tr>
+				<td>date</td>
+				<td>Formata uma data</td>
+				<td>{{ "{{data | date}\}" }}</td>
+				<td>Objeto 'Date' 21/07/2016 16:53:54</td>
+				<td>{{data | date:'dd/MM/yyyy'}}</td>
+			</tr>
+			<tr>
+				<td>date</td>
+				<td>Formata uma data e hora</td>
+				<td>{{ "{{data | date}\}" }}</td>
+				<td>Objeto 'Date' 21/07/2016 16:53:54</td>
+				<td>{{data | date:'dd/MM/yyyy HH:mm:ss'}}</td>
+			</tr>
+		</table>
+	</div>
+  </div>
+</div>
+
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">Validadores (Validators)</h3>
+  </div>
+  <div class="panel-body">
+	<form class="form-horizontal">
+	  <div class="form-group">
+	    <label for="cpf" class="col-sm-2 control-label">CPF:</label>
+	    <div class="col-sm-4">
+	      <input type="text" class="form-control" name="cpf" id="cpf" placeholder="CPF" maxlength="11" [(ngModel)]="cpfModel" #cpf="ngModel" kz-cpf>
+	    </div>
+	    <div class="col-sm-4 text-success" *ngIf="!cpf.errors && !cpf.pristine">
+	    	<span class="glyphicon glyphicon-ok" aria-hidden="true"></span> CPF válido!
+	    </div>
+	    <div class="col-sm-4 text-danger" *ngIf="cpf.errors && !cpf.pristine">
+	    	<span class="glyphicon glyphicon-remove" aria-hidden="true"></span> CPF inválido.
+	    </div>
+	  </div>
+	  <div class="form-group">
+	    <label for="cpf" class="col-sm-2 control-label">CNPJ:</label>
+	    <div class="col-sm-4">
+	      <input type="text" class="form-control" id="cnpj" name="cnpj" placeholder="CNPJ" maxlength="14" [(ngModel)]="cnpjModel" #cnpj="ngModel" kz-cnpj>
+	    </div>
+	    <div class="col-sm-4 text-success" *ngIf="!cnpj.errors && !cnpj.pristine">
+	    	<span class="glyphicon glyphicon-ok" aria-hidden="true"></span> CNPJ válido!
+	    </div>
+	    <div class="col-sm-4 text-danger" *ngIf="cnpj.errors && !cnpj.pristine">
+	    	<span class="glyphicon glyphicon-remove" aria-hidden="true"></span> CNPJ inválido.
+	    </div>
+	  </div>
+	  <div class="form-group">
+	    <label for="cpf" class="col-sm-2 control-label">CPF/CNPJ:</label>
+	    <div class="col-sm-4">
+	      <input type="text" class="form-control" id="cpfCnpf" name="cpfCnpf" placeholder="CPF/CNPJ" maxlength="14" [(ngModel)]="cpfCnpjModel" #cpfCnpj="ngModel" kz-cpf-cnpj>
+	    </div>
+	    <div class="col-sm-4 text-success" *ngIf="!cpfCnpj.errors && !cpfCnpj.pristine">
+	    	<span class="glyphicon glyphicon-ok" aria-hidden="true"></span> CPF/CNPJ válido!
+	    </div>
+	    <div class="col-sm-4 text-danger" *ngIf="cpfCnpj.errors && !cpfCnpj.pristine">
+	    	<span class="glyphicon glyphicon-remove" aria-hidden="true"></span> CPF/CNPJ inválido.
+	    </div>
+	  </div>
+	</form>
+  </div>
+</div>

@@ -1,0 +1,1 @@
+/*#export * from './#MODULO#-cadastrar.component';#*/

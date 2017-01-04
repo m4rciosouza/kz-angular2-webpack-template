@@ -1,0 +1,19 @@
+<h1>Editar #MODULO_CAP#</h1>
+
+<div class="well">
+    <form role="form">
+        <div class="form-group">
+            <label class="control-label" for="nome">Nome</label>
+            <input type="text" class="form-control" name="nome" 
+                id="nome" [(ngModel)]="#MODULO#.nome">
+        </div>
+        <div class="form-group text-center">
+            <button class="btn btn-success" (click)="atualizar()">
+                Atualizar
+            </button>
+			<a class="btn btn-default" [routerLink]="['/#MODULO#-listar']">
+                Voltar
+            </a>
+        </div>
+    </form>
+</div>
