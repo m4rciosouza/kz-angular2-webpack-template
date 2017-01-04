@@ -1,1 +1,0 @@
-/*#export * from './#MODULO#-editar.component';#*/
