@@ -15,7 +15,6 @@ import { ModalUtilComponent } from '../../shared';
 	selector: 'kz-#MODULO#-listar',
 	templateUrl: './#MODULO#-listar.component.html',
 	providers: [ #MODULO_CAP#Service ],
-	directives: [ ModalUtilComponent ],
 	styleUrls: ['./#MODULO#-listar.component.css']
 })
 export class #MODULO_CAP#ListarComponent implements OnInit {
