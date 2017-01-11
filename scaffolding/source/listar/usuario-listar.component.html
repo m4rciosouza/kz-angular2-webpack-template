@@ -32,7 +32,11 @@
             </td>
         </tr>
     </table>
-    <p *ngIf="#MODULO#s.length==0" class="text-center">
+    <kz-paginacao *ngIf="#MODULO_PLURAL#.length>0"
+        [totalRegistros]="totalRegistros"
+        (onPaginate)="paginar($event)">
+    </kz-paginacao>
+    <p *ngIf="#MODULO_PLURAL#.length==0" class="text-center">
         <i>Nenhum registro encontrado.</i>
     </p>
     <kz-modal-util 

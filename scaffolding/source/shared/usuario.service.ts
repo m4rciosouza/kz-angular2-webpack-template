@@ -84,4 +84,35 @@ export class #MODULO_CAP#Service {#*/
 
 		sessionStorage['#MODULO_PLURAL#'] = JSON.stringify(#MODULO_PLURAL#Final);
 	}
+
+	/**
+	 * Retorna listagem parcial de #MODULO_PLURAL#.
+	 *
+	 * @param number pagina
+	 * @param number qtdPorPagina
+	 * @return #MODULO_CAP#[] #MODULO_PLURAL#
+	 */
+	/*#listarParcial(pagina: number, qtdPorPagina: number): #MODULO_CAP#[] {
+		let storage: string = sessionStorage['#MODULO_PLURAL#'];
+		let #MODULO_PLURAL#: #MODULO_CAP#[] = storage ? JSON.parse(storage) : [];
+
+		let #MODULO_PLURAL#Parcial: #MODULO_CAP#[] = [];
+		for (let i = ( pagina * qtdPorPagina ); i < (pagina * qtdPorPagina + qtdPorPagina); i++) {
+			if (i >= #MODULO_PLURAL#.length) {
+				break;
+			}
+			#MODULO_PLURAL#Parcial.push(#MODULO_PLURAL#[i]);
+		}
+
+		return #MODULO_PLURAL#Parcial;
+	}#*/
+
+	/**
+	 * Retorna o total de pessoas.
+	 *
+	 * @return number total de registros
+	 */
+	/*#totalRegistros(): number {
+		return this.listarTodos().length;
+	}
 }#*/

@@ -50,14 +50,14 @@
 			<tr>
 				<td>date</td>
 				<td>Formata uma data</td>
-				<td>{{ "{{data | date}\}" }}</td>
+				<td>{{ "{{data | date:'dd/MM/yyyy'}\}" }}</td>
 				<td>Objeto 'Date' 21/07/2016 16:53:54</td>
 				<td>{{data | date:'dd/MM/yyyy'}}</td>
 			</tr>
 			<tr>
 				<td>date</td>
 				<td>Formata uma data e hora</td>
-				<td>{{ "{{data | date}\}" }}</td>
+				<td>{{ "{{data | date:'dd/MM/yyyy HH:mm:ss'}\}" }}</td>
 				<td>Objeto 'Date' 21/07/2016 16:53:54</td>
 				<td>{{data | date:'dd/MM/yyyy HH:mm:ss'}}</td>
 			</tr>
@@ -109,5 +109,29 @@
 	    </div>
 	  </div>
 	</form>
+  </div>
+</div>
+
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">Paginação</h3>
+  </div>
+  <div class="panel-body">
+  	<table class="table table-striped">
+  		<tr>
+  			<th>ID</th>
+  			<th>Nome</th>
+  		</tr>
+  		<tr *ngFor="let aluno of alunos">
+  			<td>{{aluno.id}}</td>
+  			<td>{{aluno.nome}}</td>
+  		</tr>
+  	</table>
+	<kz-paginacao 
+		[qtdPorPagina]="qtdPorPagina" 
+		[totalRegistros]="alunosTotal.length"
+		[qtdAdjacentes]="3"
+		(onPaginate)="paginar($event)">
+	</kz-paginacao>
   </div>
 </div>

@@ -1,3 +1,10 @@
+/**
+ * Componente de demonstração dos recursos do template.
+ *
+ * @author Márcio Casale de Souza <contato@kazale.com>
+ * @since 0.0.1
+ */
+
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { FormsModule }   from '@angular/forms';
@@ -10,7 +17,8 @@ import {
   KzCpfCnpjPipe,
   KzCpfValidatorDirective,
   KzCnpjValidatorDirective, 
-  KzCpfCnpjValidatorDirective 
+  KzCpfCnpjValidatorDirective,
+  KzPaginacaoComponent, 
 } from '../shared';
 
 describe('DemoComponent', function () {
@@ -27,7 +35,8 @@ describe('DemoComponent', function () {
         KzCpfCnpjPipe,
         KzCpfValidatorDirective,
         KzCnpjValidatorDirective,
-        KzCpfCnpjValidatorDirective
+        KzCpfCnpjValidatorDirective,
+        KzPaginacaoComponent
       ],
       imports: [
           RouterTestingModule.withRoutes(

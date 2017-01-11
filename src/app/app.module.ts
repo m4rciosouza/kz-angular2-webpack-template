@@ -15,6 +15,7 @@ import {
   KzCnpjValidatorDirective, 
   KzCpfCnpjValidatorDirective,
   ModalUtilComponent,
+  KzPaginacaoComponent,
   DemoComponent
 } from './';
 
@@ -34,6 +35,7 @@ import {
     KzCpfValidatorDirective,
     KzCnpjValidatorDirective,
     KzCpfCnpjValidatorDirective,
+    KzPaginacaoComponent,
     ModalUtilComponent
   ],
   bootstrap:    [ AppComponent ]

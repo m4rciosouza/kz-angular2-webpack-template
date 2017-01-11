@@ -5,11 +5,14 @@
  * @since 0.0.1
  */
 
-/*#import { Component } from '@angular/core';
-import { OnInit } from '@angular/core';
+/*#import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 import { #MODULO_CAP#, #MODULO_CAP#Service } from '../shared';
-import { ModalUtilComponent } from '../../shared';
+import { 
+	ModalUtilComponent, 
+	KzPaginacaoComponent 
+} from '../../shared';
 
 @Component({
 	selector: 'kz-#MODULO#-listar',
@@ -20,21 +23,27 @@ import { ModalUtilComponent } from '../../shared';
 export class #MODULO_CAP#ListarComponent implements OnInit {
 
 	private #MODULO#s: #MODULO_CAP#[];
-	private idExcluir: number;#*/
+	private idExcluir: number;
+	private pagina: number;
+	private totalRegistros: number;#*/
 
 	/**
 	 * Construtor.
 	 *
 	 * @param #MODULO_CAP#Service #MODULO#Service
 	 */
-	/*#constructor(private #MODULO#Service: #MODULO_CAP#Service) {
+	/*#constructor(private #MODULO#Service: #MODULO_CAP#Service,
+		private route: ActivatedRoute) {
 	}#*/
 
 	/**
 	 * Método executado logo após a criação do componente.
 	 */
 	/*#ngOnInit() {
-		this.#MODULO#s = this.#MODULO#Service.listarTodos();
+		this.totalRegistros = this.#MODULO#Service.totalRegistros();
+		this.pagina = +this.route.snapshot.queryParams['pagina'] || KzPaginacaoComponent.PAG_PADRAO;
+		this.#MODULO_PLURAL# = this.#MODULO#Service.listarParcial(
+			--this.pagina, KzPaginacaoComponent.TOTAL_PAGS_PADRAO);
 	}#*/
 
 	/**
@@ -52,7 +61,18 @@ export class #MODULO_CAP#ListarComponent implements OnInit {
 	 */
  	/*#onExcluir() {
  		this.#MODULO#Service.excluir(this.idExcluir);
- 		this.idExcluir = -1;
- 		this.#MODULO#s = this.#MODULO#Service.listarTodos();
- 	}
+ 		location.reload();
+ 	}#*/
+
+ 	/**
+ 	 * Método responsável pela paginação.
+ 	 *
+ 	 * @param any $event Número da página atual.
+ 	 */
+ 	/*#paginar($event: any) {
+		this.pagina = $event - 1;
+		this.totalRegistros = this.#MODULO#Service.totalRegistros();
+		this.#MODULO_PLURAL# = this.#MODULO#Service.listarParcial(
+			this.pagina, KzPaginacaoComponent.TOTAL_PAGS_PADRAO);
+	}
 }#*/
