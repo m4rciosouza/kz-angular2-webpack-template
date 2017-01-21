@@ -5,7 +5,7 @@
  * @since 0.0.1
  */
 
-import { Routes } from '@angular/router'; 
+import { Routes } from '@angular/router';
 
 import {  DemoComponent } from './';
 

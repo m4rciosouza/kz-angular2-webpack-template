@@ -1,43 +1,27 @@
+/**
+ * Arquivo de módulo principal da aplicação.
+ *
+ * @author Márcio Casale de Souza <contato@kazale.com>
+ * @since 0.0.3
+ */
+
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule, Routes } from '@angular/router';
-import { FormsModule }   from '@angular/forms';
 
 import { AppComponent }  from './app.component';
-import { routing } from './app.routes';
+import { AppRoutingModule }   from './app-routing.module';
 
-import { 
-  KzCepPipe,
-  KzCpfPipe,
-  KzCnpjPipe,
-  KzCpfCnpjPipe,
-  KzCpfValidatorDirective,
-  KzCnpjValidatorDirective, 
-  KzCpfCnpjValidatorDirective,
-  ModalUtilComponent,
-  KzPaginacaoComponent,
-  DemoComponent
-} from './';
+import { DemoModule } from './';
 
 @NgModule({
-  imports:      [ 
-  	BrowserModule,
-  	routing,
-    FormsModule
+  imports:      [
+    BrowserModule,
+    AppRoutingModule,
+    DemoModule
   ],
   declarations: [ 
-  	AppComponent,
-  	DemoComponent,
-    KzCepPipe,
-    KzCpfPipe,
-    KzCnpjPipe,
-    KzCpfCnpjPipe,
-    KzCpfValidatorDirective,
-    KzCnpjValidatorDirective,
-    KzCpfCnpjValidatorDirective,
-    KzPaginacaoComponent,
-    ModalUtilComponent
+    AppComponent
   ],
   bootstrap:    [ AppComponent ]
 })
-export class AppModule { }
+export class AppModule {}

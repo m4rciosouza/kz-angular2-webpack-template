@@ -2,7 +2,7 @@
  * Arquivo de teste do componente #MODULO_CAP#ListarComponent.
  *
  * @author Márcio Casale de Souza <contato@kazale.com>
- * @since 0.0.1
+ * @since 0.0.3
  */
 
 /*#import { TestBed } from '@angular/core/testing';

@@ -2,16 +2,20 @@
  * Arquivo principal de rotas e navegação da aplicação.
  *
  * @author Márcio Casale de Souza <contato@kazale.com>
- * @since 0.0.1
+ * @since 0.0.3
  */
 
-import { ModuleWithProviders } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { DemoRoutes } from './demo';
 
 export const routes: Routes = [
 	...DemoRoutes
-]; 
+];
 
-export const routing: ModuleWithProviders = RouterModule.forRoot(routes);
+@NgModule({
+  imports: [ RouterModule.forRoot(routes) ],
+  exports: [ RouterModule ]
+})
+export class AppRoutingModule {}

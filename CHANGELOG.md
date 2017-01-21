@@ -1,6 +1,11 @@
 # kz-angular2-webpack-template
 ========
 
+### CHANGELOG 0.0.3
+
+* Criação de sub módulos para cada CRUD criado
+* Correção do warning no script de CRUD
+
 ### CHANGELOG 0.0.2
 
 * Adicionado componente de paginação

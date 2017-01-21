@@ -2,17 +2,14 @@
  * Componente de listagem de #MODULO#s.
  *
  * @author Márcio Casale de Souza <contato@kazale.com>
- * @since 0.0.1
+ * @since 0.0.3
  */
 
 /*#import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { #MODULO_CAP#, #MODULO_CAP#Service } from '../shared';
-import { 
-	ModalUtilComponent, 
-	KzPaginacaoComponent 
-} from '../../shared';
+import { KzPaginacaoComponent } from '../../shared';
 
 @Component({
 	selector: 'kz-#MODULO#-listar',

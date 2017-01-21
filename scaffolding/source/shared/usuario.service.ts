@@ -2,7 +2,7 @@
  * Serviço de gerenciamento de #MODULO_PLURAL#.
  *
  * @author Márcio Casale de Souza <contato@kazale.com>
- * @since 0.0.1
+ * @since 0.0.3
  */
  
 /*#import { Injectable } from '@angular/core';

@@ -2,7 +2,7 @@
  * Componente de visualização de #MODULO#.
  *
  * @author Márcio Casale de Souza <contato@kazale.com>
- * @since 0.0.1
+ * @since 0.0.3
  */
 
 /*#import { Component } from '@angular/core';

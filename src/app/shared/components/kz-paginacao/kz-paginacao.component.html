@@ -14,8 +14,8 @@
     </li>
     <li *ngFor="let i of paginas" 
     	[ngClass]="{'active': i===pagina}">
-		<a href="#" (click)="paginar(i, $event)">{{ i }}</a>
-	</li>
+  		<a href="#" (click)="paginar(i, $event)">{{ i }}</a>
+  	</li>
     <li *ngIf="exibirProximo">
       <a href="#" aria-label="Próximo"
       	(click)="paginar(pagina+1, $event)">
