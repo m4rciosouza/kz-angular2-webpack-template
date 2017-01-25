@@ -1,6 +1,11 @@
 # kz-angular2-webpack-template
 ========
 
+### CHANGELOG 0.0.4
+
+* Adicionado máscara para entrada de dados como CPF, CNPJ, Data
+* Adicionado máscara para entrada de valores monetários
+
 ### CHANGELOG 0.0.3
 
 * Criação de sub módulos para cada CRUD criado

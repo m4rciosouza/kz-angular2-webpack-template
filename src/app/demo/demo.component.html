@@ -72,41 +72,297 @@
   </div>
   <div class="panel-body">
 	<form class="form-horizontal">
-	  <div class="form-group">
-	    <label for="cpf" class="col-sm-2 control-label">CPF:</label>
-	    <div class="col-sm-4">
-	      <input type="text" class="form-control" name="cpf" id="cpf" placeholder="CPF" maxlength="11" [(ngModel)]="cpfModel" #cpf="ngModel" kz-cpf>
-	    </div>
-	    <div class="col-sm-4 text-success" *ngIf="!cpf.errors && !cpf.pristine">
-	    	<span class="glyphicon glyphicon-ok" aria-hidden="true"></span> CPF válido!
-	    </div>
-	    <div class="col-sm-4 text-danger" *ngIf="cpf.errors && !cpf.pristine">
-	    	<span class="glyphicon glyphicon-remove" aria-hidden="true"></span> CPF inválido.
-	    </div>
+	  <div class="table-responsive">
+		<table class="table table-striped table-hover">
+			<tr>
+				<th>Validador</th>
+				<th>Descrição</th>
+				<th>Utilização</th>
+				<th>Valor</th>
+				<th>Valor no model</th>
+			</tr>
+			<tr>
+				<td>kz-cpf</td>
+				<td>Valida um CPF</td>
+				<td>kz-cpf</td>
+				<td>
+					<input 
+				      	type="text" 
+				      	class="form-control" 
+				      	name="cpf" 
+				      	id="cpf" 
+				      	placeholder="999.999.999-99" 
+				      	maxlength="14" 
+				      	[(ngModel)]="cpfModel" 
+				      	#cpf="ngModel" 
+				      	kz-cpf 
+				        kzMask="999.999.999-99">
+				    <div class="col-sm-8 text-success" 
+				    	*ngIf="!cpf.errors && !cpf.pristine">
+				    	<span class="glyphicon glyphicon-ok" 
+				    		aria-hidden="true"></span> CPF válido!
+				    </div>
+				    <div class="col-sm-8 text-danger" 
+				    	*ngIf="cpf.errors && !cpf.pristine">
+				    	<span class="glyphicon glyphicon-remove" 
+				    		aria-hidden="true"></span> CPF inválido.
+				    </div>
+				</td>
+				<td>{{ cpfModel }}</td>
+			</tr>
+			<tr>
+				<td>kz-cnpj</td>
+				<td>Valida um CNPJ</td>
+				<td>kz-cnpj</td>
+				<td>
+					<input 
+				      	type="text" 
+				      	class="form-control" 
+				      	id="cnpj" 
+				      	name="cnpj" 
+				      	placeholder="99.999.999/9999-99" 
+				      	maxlength="18" 
+				      	[(ngModel)]="cnpjModel" 
+				      	#cnpj="ngModel" 
+				      	kz-cnpj
+				      	kzMask="99.999.999/9999-99">
+				    <div class="col-sm-8 text-success" 
+				    	*ngIf="!cnpj.errors && !cnpj.pristine">
+				    	<span class="glyphicon glyphicon-ok" 
+				    		aria-hidden="true"></span> CNPJ válido!
+				    </div>
+				    <div class="col-sm-8 text-danger" 
+				    	*ngIf="cnpj.errors && !cnpj.pristine">
+				    	<span class="glyphicon glyphicon-remove" 
+				    		aria-hidden="true"></span> CNPJ inválido.
+				    </div>
+				</td>
+				<td>{{ cnpjModel }}</td>
+			</tr>
+			<tr>
+				<td>kz-cpf-cnpj</td>
+				<td>Valida um CPF/CNPJ</td>
+				<td>kz-cpf-cnpj</td>
+				<td>
+					<input 
+				      	type="text" 
+				      	class="form-control" 
+				      	id="cpfCnpf" 
+				      	name="cpfCnpf" 
+				      	placeholder="CPF/CNPJ" 
+				      	maxlength="14" 
+				      	[(ngModel)]="cpfCnpjModel" 
+				      	#cpfCnpj="ngModel" 
+				      	kz-cpf-cnpj>
+				    <div class="col-sm-8 text-success" 
+				    	*ngIf="!cpfCnpj.errors && !cpfCnpj.pristine">
+				    	<span class="glyphicon glyphicon-ok" 
+				    		aria-hidden="true"></span> CPF/CNPJ válido!
+				    </div>
+				    <div class="col-sm-8 text-danger" 
+				    	*ngIf="cpfCnpj.errors && !cpfCnpj.pristine">
+				    	<span class="glyphicon glyphicon-remove" 
+				    		aria-hidden="true"></span> CPF/CNPJ inválido.
+				    </div>
+				</td>
+				<td>{{ cpfCnpjModel }}</td>
+			</tr>
+		</table>
 	  </div>
-	  <div class="form-group">
-	    <label for="cpf" class="col-sm-2 control-label">CNPJ:</label>
-	    <div class="col-sm-4">
-	      <input type="text" class="form-control" id="cnpj" name="cnpj" placeholder="CNPJ" maxlength="14" [(ngModel)]="cnpjModel" #cnpj="ngModel" kz-cnpj>
-	    </div>
-	    <div class="col-sm-4 text-success" *ngIf="!cnpj.errors && !cnpj.pristine">
-	    	<span class="glyphicon glyphicon-ok" aria-hidden="true"></span> CNPJ válido!
-	    </div>
-	    <div class="col-sm-4 text-danger" *ngIf="cnpj.errors && !cnpj.pristine">
-	    	<span class="glyphicon glyphicon-remove" aria-hidden="true"></span> CNPJ inválido.
-	    </div>
+	</form>
+  </div>
+</div>
+
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">Máscaras</h3>
+  </div>
+  <div class="panel-body">
+	<form class="form-horizontal">
+	  <div class="table-responsive">
+		<table class="table table-striped table-hover">
+			<tr>
+				<th>Máscara (Directive)</th>
+				<th>Descrição</th>
+				<th>Utilização</th>
+				<th>Valor</th>
+				<th>Valor no model</th>
+			</tr>
+			<tr>
+				<td>kzMask</td>
+				<td>Formata um CPF</td>
+				<td>kzMask="999.999.999-99"</td>
+				<td>
+					<input 
+				      	type="text" 
+				      	class="form-control" 
+				      	name="cpfMask" 
+				      	id="cpfMask" 
+				      	placeholder="999.999.999-99" 
+				      	maxlength="14" 
+				      	[(ngModel)]="cpfModelMask" 
+				      	kzMask="999.999.999-99">
+				</td>
+				<td>{{ cpfModelMask }}</td>
+			</tr>
+			<tr>
+				<td>kzMask</td>
+				<td>Formata um CNPJ</td>
+				<td>kzMask="99.999.999/9999-99"</td>
+				<td>
+					<input 
+				      	type="text" 
+				      	class="form-control" 
+				      	id="cnpjMask" 
+				      	name="cnpjMask" 
+				      	placeholder="99.999.999/9999-99" 
+				      	maxlength="18" 
+				      	[(ngModel)]="cnpjModelMask" 
+				      	kzMask="99.999.999/9999-99">
+				</td>
+				<td>{{ cnpjModelMask }}</td>
+			</tr>
+			<tr>
+				<td>kzMask</td>
+				<td>Formata um CEP</td>
+				<td>kzMask="99999-999"</td>
+				<td>
+					<input 
+				      	type="text" 
+				      	class="form-control" 
+				      	id="cepMask" 
+				      	name="cepMask" 
+				      	placeholder="99999-999" 
+				      	maxlength="9" 
+				      	[(ngModel)]="cepModelMask"
+				      	kzMask="99999-999">
+				</td>
+				<td>{{ cepModelMask }}</td>
+			</tr>
+			<tr>
+				<td>kzMask</td>
+				<td>Formata uma Data e Hora</td>
+				<td>kzMask="99/99/9999 99:99:99"</td>
+				<td>
+					<input 
+				      	type="text" 
+				      	class="form-control" 
+				      	id="dataHoraMask" 
+				      	name="dataHoraMask" 
+				      	placeholder="dd/mm/yyyy hh:mm:ss" 
+				      	maxlength="19" 
+				      	[(ngModel)]="dataHoraModelMask"
+				      	kzMask="99/99/9999 99:99:99">
+				</td>
+				<td>{{ dataHoraModelMask }}</td>
+			</tr>
+			<tr>
+				<td>kzMask</td>
+				<td>Formata uma Data</td>
+				<td>kzMask="99/99/9999"</td>
+				<td>
+					<input 
+				      	type="text" 
+				      	class="form-control" 
+				      	id="dataMask" 
+				      	name="dataMask" 
+				      	placeholder="dd/mm/yyyy" 
+				      	maxlength="10" 
+				      	[(ngModel)]="dataModelMask"
+				      	kzMask="99/99/9999">
+				</td>
+				<td>{{ dataModelMask }}</td>
+			</tr>
+			<tr>
+				<td>kzMask</td>
+				<td>Formata uma Hora</td>
+				<td>kzMask="99:99:99"</td>
+				<td>
+					<input 
+				      	type="text" 
+				      	class="form-control" 
+				      	id="horaMask" 
+				      	name="horaMask" 
+				      	placeholder="hh:mm:ss" 
+				      	maxlength="8" 
+				      	[(ngModel)]="horaModelMask"
+				      	kzMask="99:99:99">
+				</td>
+				<td>{{ horaModelMask }}</td>
+			</tr>
+		</table>
 	  </div>
-	  <div class="form-group">
-	    <label for="cpf" class="col-sm-2 control-label">CPF/CNPJ:</label>
-	    <div class="col-sm-4">
-	      <input type="text" class="form-control" id="cpfCnpf" name="cpfCnpf" placeholder="CPF/CNPJ" maxlength="14" [(ngModel)]="cpfCnpjModel" #cpfCnpj="ngModel" kz-cpf-cnpj>
-	    </div>
-	    <div class="col-sm-4 text-success" *ngIf="!cpfCnpj.errors && !cpfCnpj.pristine">
-	    	<span class="glyphicon glyphicon-ok" aria-hidden="true"></span> CPF/CNPJ válido!
-	    </div>
-	    <div class="col-sm-4 text-danger" *ngIf="cpfCnpj.errors && !cpfCnpj.pristine">
-	    	<span class="glyphicon glyphicon-remove" aria-hidden="true"></span> CPF/CNPJ inválido.
-	    </div>
+	</form>
+  </div>
+</div>
+
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">Máscaras de Valores Monetários</h3>
+  </div>
+  <div class="panel-body">
+	<form class="form-horizontal">
+	  <div class="table-responsive">
+		<table class="table table-striped table-hover">
+			<tr>
+				<th>Máscara (Directive)</th>
+				<th>Descrição</th>
+				<th>Utilização</th>
+				<th>Valor</th>
+				<th>Valor no model</th>
+			</tr>
+			<tr>
+				<td>kzMaskCurrency</td>
+				<td>Formata moeda padrão</td>
+				<td>kzMaskCurrency</td>
+				<td>
+					<input 
+				      	type="text" 
+				      	class="form-control" 
+				      	name="currencyMask" 
+				      	id="currencyMask" 
+				      	placeholder="0,00" 
+				      	maxlength="15" 
+				      	[(ngModel)]="currencyModelMask" 
+				      	kzMaskCurrency>
+				</td>
+				<td>{{ currencyModelMask }}</td>
+			</tr>
+			<tr>
+				<td>kzMaskCurrency</td>
+				<td>Formata moeda com prefixo R$</td>
+				<td>[kzMaskCurrency]="{{"{"}}prefixo:'R$'}"</td>
+				<td>
+					<input 
+				      	type="text" 
+				      	class="form-control" 
+				      	name="currencyMaskPre" 
+				      	id="currencyMaskPre" 
+				      	placeholder="0,00" 
+				      	maxlength="15" 
+				      	[(ngModel)]="currencyPreModelMask" 
+				      	[kzMaskCurrency]="{prefixo:'R$'}">
+				</td>
+				<td>{{ currencyPreModelMask }}</td>
+			</tr>
+			<tr>
+				<td>kzMaskCurrency</td>
+				<td>Formato americano</td>
+				<td>[kzMaskCurrency]="{{"{"}}decimal:'.', milhar:','}"</td>
+				<td>
+					<input 
+				      	type="text" 
+				      	class="form-control" 
+				      	name="currencyMaskUS" 
+				      	id="currencyMaskUS" 
+				      	placeholder="0,00" 
+				      	maxlength="15" 
+				      	[(ngModel)]="currencyUSModelMask" 
+				      	[kzMaskCurrency]="{decimal:'.', milhar:','}">
+				</td>
+				<td>{{ currencyUSModelMask }}</td>
+			</tr>
+		</table>
 	  </div>
 	</form>
   </div>

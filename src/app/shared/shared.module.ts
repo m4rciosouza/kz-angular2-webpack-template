@@ -18,7 +18,9 @@ import {
   KzCnpjValidatorDirective, 
   KzCpfCnpjValidatorDirective,
   ModalUtilComponent,
-  KzPaginacaoComponent
+  KzPaginacaoComponent,
+  KzMaskDirective,
+  KzMaskCurrencyDirective
 } from './';
 
 @NgModule({
@@ -35,7 +37,9 @@ import {
   	KzCnpjValidatorDirective, 
   	KzCpfCnpjValidatorDirective,
   	ModalUtilComponent,
-  	KzPaginacaoComponent
+  	KzPaginacaoComponent,
+    KzMaskDirective,
+    KzMaskCurrencyDirective
   ],
   exports: [ 
   	KzCepPipe,
@@ -47,6 +51,8 @@ import {
   	KzCpfCnpjValidatorDirective,
   	ModalUtilComponent,
   	KzPaginacaoComponent,
+    KzMaskDirective,
+    KzMaskCurrencyDirective,
     CommonModule, 
     FormsModule 
   ]
