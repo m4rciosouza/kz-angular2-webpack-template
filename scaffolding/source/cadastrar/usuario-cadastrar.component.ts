@@ -14,7 +14,6 @@ import { #MODULO_CAP#, #MODULO_CAP#Service } from '../shared';
 @Component({
 	selector: 'kz-#MODULO#-cadastrar',
 	templateUrl: './#MODULO#-cadastrar.component.html',
-	providers: [ #MODULO_CAP#Service ],
 	styleUrls: ['./#MODULO#-cadastrar.component.css']
 })
 export class #MODULO_CAP#CadastrarComponent implements OnInit {

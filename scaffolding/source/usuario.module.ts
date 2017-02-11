@@ -12,7 +12,8 @@ import {
 	#MODULO_CAP#CadastrarComponent,
 	#MODULO_CAP#EditarComponent,
 	#MODULO_CAP#ListarComponent,
-	#MODULO_CAP#VisualizarComponent
+	#MODULO_CAP#VisualizarComponent,
+	#MODULO_CAP#Service
 } from './';
 
 import { SharedModule } from '../shared';
@@ -27,6 +28,9 @@ import { SharedModule } from '../shared';
 		#MODULO_CAP#EditarComponent,
 		#MODULO_CAP#ListarComponent,
 		#MODULO_CAP#VisualizarComponent
+	],
+	providers: [
+		#MODULO_CAP#Service
 	]
 })
 export class #MODULO_CAP#Module {}#*/

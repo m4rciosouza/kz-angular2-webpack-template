@@ -14,7 +14,6 @@ import { #MODULO_CAP#, #MODULO_CAP#Service } from '../shared';
 @Component({
 	selector: 'kz-#MODULO#-visualizar',
 	templateUrl: './#MODULO#-visualizar.component.html',
-	providers: [ #MODULO_CAP#Service ],
 	styleUrls: ['./#MODULO#-visualizar.component.css']
 })
 export class #MODULO_CAP#VisualizarComponent implements OnInit {

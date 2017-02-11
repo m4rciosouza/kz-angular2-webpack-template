@@ -14,7 +14,6 @@ import { KzPaginacaoComponent } from '../../shared';
 @Component({
 	selector: 'kz-#MODULO#-listar',
 	templateUrl: './#MODULO#-listar.component.html',
-	providers: [ #MODULO_CAP#Service ],
 	styleUrls: ['./#MODULO#-listar.component.css']
 })
 export class #MODULO_CAP#ListarComponent implements OnInit {

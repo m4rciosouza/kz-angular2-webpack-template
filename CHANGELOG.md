@@ -1,6 +1,11 @@
 # kz-angular2-webpack-template
 ========
 
+### CHANGELOG 0.0.5
+
+* Melhorias nas classes de teste do CRUD
+* Adição de classes utilitárias para teste
+
 ### CHANGELOG 0.0.4
 
 * Adicionado máscara para entrada de dados como CPF, CNPJ, Data

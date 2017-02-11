@@ -14,7 +14,6 @@ import { #MODULO_CAP#, #MODULO_CAP#Service } from '../shared';
 @Component({
 	selector: 'kz-#MODULO#-editar',
 	templateUrl: './#MODULO#-editar.component.html',
-	providers: [ #MODULO_CAP#Service ],
 	styleUrls: ['./#MODULO#-editar.component.css']
 })
 export class #MODULO_CAP#EditarComponent implements OnInit {

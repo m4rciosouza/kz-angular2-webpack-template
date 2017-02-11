@@ -232,11 +232,11 @@ prompt.get(schema, function (err, input) {
 	console.log('## Execute as operações abaixo para registrar o novo módulo na aplicação:');
 	console.log('#');
 	console.log('## Adicione as seguintes linhas no arquivo src/app/app-routing.module.ts');
-	console.log('#   import { ' + moduloCap + 'Routes } from \'./' + modulo + ';');
+	console.log('#   import { ' + moduloCap + 'Routes } from \'./' + modulo + '\';');
 	console.log('#   ...' + moduloCap + 'Routes');
 	console.log('#');
 	console.log('## Importe o módulo no arquivo src/app/app.module.ts');
-	console.log('#   import { ' + moduloCap + 'Module } from \'./' + modulo + ';');
+	console.log('#   import { ' + moduloCap + 'Module } from \'./' + modulo + '\';');
 	console.log('#   ' + moduloCap + 'Module' + ' (em @NgModule({ imports: [] })');
 	console.log('#');
 	console.log('## Acesse o CRUD em: http://localhost:8080/' + moduloPlural);
