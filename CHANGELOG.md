@@ -1,6 +1,11 @@
 # kz-angular2-webpack-template
 ========
 
+### CHANGELOG 0.0.6
+
+* Adicionado servidor express para visualizar app de produção
+* Adicionado suporte para deploy no Heroku
+
 ### CHANGELOG 0.0.5
 
 * Melhorias nas classes de teste do CRUD

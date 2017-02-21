@@ -17,6 +17,12 @@ npm install
 npm start
 ```
 
+### Executando o projeto em modo de produção (http://localhost:5000)
+
+```
+npm run start-prod
+```
+
 ### Rodando os testes
 
 ```
@@ -33,6 +39,16 @@ npm run build
 
 ```
 npm run crud
+```
+
+### Deploy do código de produção no Heroku
+
+```
+heroku login
+heroku create
+git push heroku master
+heroku ps:scale web=1
+heroku open
 ```
 
 ### Atualizações
