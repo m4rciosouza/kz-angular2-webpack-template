@@ -20,7 +20,8 @@ import {
   ModalUtilComponent,
   KzPaginacaoComponent,
   KzMaskDirective,
-  KzMaskCurrencyDirective
+  KzMaskCurrencyDirective,
+  KzPikadayDirective
 } from './';
 
 @NgModule({
@@ -39,7 +40,8 @@ import {
   	ModalUtilComponent,
   	KzPaginacaoComponent,
     KzMaskDirective,
-    KzMaskCurrencyDirective
+    KzMaskCurrencyDirective,
+    KzPikadayDirective
   ],
   exports: [ 
   	KzCepPipe,
@@ -53,6 +55,7 @@ import {
   	KzPaginacaoComponent,
     KzMaskDirective,
     KzMaskCurrencyDirective,
+    KzPikadayDirective,
     CommonModule, 
     FormsModule 
   ]

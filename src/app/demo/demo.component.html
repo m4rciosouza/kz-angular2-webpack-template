@@ -290,6 +290,22 @@
 				</td>
 				<td>{{ horaModelMask }}</td>
 			</tr>
+			<tr>
+				<td>kzPikaday</td>
+				<td>Exibe calendário para selecionar a data</td>
+				<td>kzPikaday="idCampoInputData"</td>
+				<td>
+				    <input 
+						type="text" 
+						class="form-control"
+						placeholder="dd/mm/yyyy"
+						id="pikadayData"
+						name="pikadayData"
+						[(ngModel)]="pikadayData"
+						kzPikaday="pikadayData"> 
+				</td>
+				<td>{{ pikadayData }}</td>
+			</tr>
 		</table>
 	  </div>
 	</form>

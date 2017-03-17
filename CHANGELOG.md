@@ -1,6 +1,10 @@
 # kz-angular2-webpack-template
 ========
 
+### CHANGELOG 0.0.7
+
+* Adicionado calendário seletor de data (date picker)
+
 ### CHANGELOG 0.0.6
 
 * Adicionado servidor express para visualizar app de produção
