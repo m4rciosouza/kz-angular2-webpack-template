@@ -33,7 +33,6 @@ export class KzPikadayDirective implements AfterViewInit,
     AfterViewChecked, ControlValueAccessor {
 
   @Input('kzPikaday') pikaday: string;
-  @Input('valor') value: string;
   @Input('formato') formato: string = 'DD/MM/YYYY';
   @Input('mascara') mascara: string = '99/99/9999';
 
@@ -42,6 +41,8 @@ export class KzPikadayDirective implements AfterViewInit,
 
   picker: any;
   field: any;
+  value: any;
+  initValue: boolean = false;
   
   writeValue(value: any): void {
     this.value = value;
@@ -84,9 +85,10 @@ export class KzPikadayDirective implements AfterViewInit,
   }
 
   ngAfterViewChecked() {
-    if (this.value !== undefined) {
+    if (this.value !== undefined && !this.initValue) {
       this.picker.setDate(
         moment(this.value, this.formato).toDate());
+      this.initValue = true;
     }
   }
 
