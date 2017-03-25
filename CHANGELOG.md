@@ -1,6 +1,10 @@
 # kz-angular2-webpack-template
 ========
 
+### CHANGELOG 0.0.8
+
+* Angular 2 atualizo para a versão 4.0.0
+
 ### CHANGELOG 0.0.7
 
 * Adicionado calendário seletor de data (date picker)
