@@ -9,7 +9,8 @@ import {
   Directive, 
   HostListener, 
   Input, 
-  OnInit 
+  OnInit,
+  ElementRef 
 } from '@angular/core';
 import { 
   NG_VALUE_ACCESSOR, ControlValueAccessor 
@@ -34,6 +35,8 @@ export class KzMaskCurrencyDirective implements ControlValueAccessor, OnInit {
 
   @Input('kzMaskCurrency') kzMask: any;
 
+  constructor(private el: ElementRef) {}
+
   ngOnInit() {
     this.separadorDecimal = this.kzMask.decimal || ',';
     this.separadorMilhar = this.kzMask.milhar || '.';
@@ -41,6 +44,9 @@ export class KzMaskCurrencyDirective implements ControlValueAccessor, OnInit {
   }
 
   writeValue(value: any): void {
+    if (value) {
+      this.el.nativeElement.value = value;
+    }
   }
 
   registerOnChange(fn: any): void {

@@ -5,7 +5,12 @@
  * @since 0.0.4
  */
 
-import { Directive, HostListener, Input } from '@angular/core';
+import { 
+  Directive, 
+  HostListener, 
+  Input, 
+  ElementRef 
+} from '@angular/core';
 import { 
   NG_VALUE_ACCESSOR, ControlValueAccessor 
 } from '@angular/forms';
@@ -25,7 +30,12 @@ export class KzMaskDirective implements ControlValueAccessor {
 
   @Input('kzMask') kzMask: string;
 
+  constructor(private el: ElementRef) {}
+
   writeValue(value: any): void {
+    if (value) {
+      this.el.nativeElement.value = value;
+    }
   }
 
   registerOnChange(fn: any): void {
