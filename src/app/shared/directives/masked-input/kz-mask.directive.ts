@@ -34,7 +34,7 @@ export class KzMaskDirective implements ControlValueAccessor {
 
   writeValue(value: any): void {
     if (value) {
-      this.el.nativeElement.value = value;
+      this.el.nativeElement.value = this.aplicarMascara(value);
     }
   }
 
@@ -48,9 +48,7 @@ export class KzMaskDirective implements ControlValueAccessor {
 
   @HostListener('keyup', ['$event']) 
   onKeyup($event: any) {
-    var valor = $event.target.value.replace(/\D/g, '');
-    var pad = this.kzMask.replace(/\D/g, '').replace(/9/g, '_');
-    var valorMask = valor + pad.substring(0, pad.length - valor.length);
+    let valor = $event.target.value.replace(/\D/g, '');
 
     // retorna caso pressionado backspace
     if ($event.keyCode === 8) {
@@ -58,13 +56,37 @@ export class KzMaskDirective implements ControlValueAccessor {
       return;
     }
 
+    let pad = this.kzMask.replace(/\D/g, '').replace(/9/g, '_');
     if (valor.length <= pad.length) {
       this.onChange(valor);
     }
 
-    var valorMaskPos = 0;
+    $event.target.value = this.aplicarMascara(valor);
+  }
+
+  @HostListener('blur', ['$event']) 
+  onBlur($event: any) {
+    if ($event.target.value.length === this.kzMask.length) {
+      return;
+    }
+    this.onChange('');
+    $event.target.value = '';
+  }
+
+  /**
+   * Aplica a máscara a determinado valor.
+   *
+   * @param string valor
+   * @return string
+   */
+  aplicarMascara(valor: string): string {
+    valor = valor.replace(/\D/g, '');
+    let pad = this.kzMask.replace(/\D/g, '').replace(/9/g, '_');
+    let valorMask = valor + pad.substring(0, pad.length - valor.length);
+    let valorMaskPos = 0;
+    
     valor = '';
-    for (var i = 0; i < this.kzMask.length; i++) {
+    for (let i = 0; i < this.kzMask.length; i++) {
       if (isNaN(parseInt(this.kzMask.charAt(i)))) {
         valor += this.kzMask.charAt(i);
       } else {
@@ -76,15 +98,6 @@ export class KzMaskDirective implements ControlValueAccessor {
       valor = valor.substr(0, valor.indexOf('_'));
     }
 
-    $event.target.value = valor;
-  }
-
-  @HostListener('blur', ['$event']) 
-  onBlur($event: any) {
-    if ($event.target.value.length === this.kzMask.length) {
-      return;
-    }
-    this.onChange('');
-    $event.target.value = '';
+    return valor;
   }
 }

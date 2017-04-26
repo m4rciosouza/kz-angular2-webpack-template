@@ -45,7 +45,7 @@ export class KzMaskCurrencyDirective implements ControlValueAccessor, OnInit {
 
   writeValue(value: any): void {
     if (value) {
-      this.el.nativeElement.value = value;
+      this.el.nativeElement.value = this.aplicarMascara(String(value));
     }
   }
 
@@ -59,14 +59,47 @@ export class KzMaskCurrencyDirective implements ControlValueAccessor, OnInit {
 
   @HostListener('keyup', ['$event']) 
   onKeyup($event: any) {
-    var valorNum = parseInt($event.target.value.replace(/\D/g, ''));
-    var valorMask = '';
-    var valor: string;
 
-    if (isNaN(valorNum)) {
+    let valor: string = this.aplicarMascara($event.target.value);
+
+    if (valor === '') {
       this.onChange('');
       $event.target.value = '';
       return;
+    }
+
+    if (this.separadorDecimal === ',') {
+      this.onChange(valor.replace(/\./g, '').replace(',', '.'));
+    } else {
+      this.onChange(valor.replace(/\,/g, ''));
+    }
+
+    $event.target.value = valor;
+  }
+
+  @HostListener('blur', ['$event']) 
+  onBlur($event: any) {
+    var pattern = '0' + this.separadorDecimal + '00';
+    if ($event.target.value.indexOf(pattern) === -1) {
+      return;
+    }
+    this.onChange('');
+    $event.target.value = '';
+  }
+
+  /**
+   * Aplica a máscara a determinado valor.
+   *
+   * @param string valorConverter
+   * @return string
+   */
+  aplicarMascara(valorConverter: string): string {
+    let valorNum = parseInt(valorConverter.replace(/\D/g, ''), 10);
+    let valorMask = '';
+    let valor: string;
+
+    if (isNaN(valorNum)) {
+      return '';
     }
 
     valor = valorNum.toString();
@@ -87,8 +120,8 @@ export class KzMaskCurrencyDirective implements ControlValueAccessor, OnInit {
      }
 
     if (valorMask === '') {
-      var sepMilhar = 0;
-      for (var i = (valor.length - 3); i >= 0; i--) {
+      let sepMilhar = 0;
+      for (let i = (valor.length - 3); i >= 0; i--) {
         if (sepMilhar === 3) {
           valorMask = this.separadorMilhar + valorMask;
           sepMilhar = 0;
@@ -100,24 +133,11 @@ export class KzMaskCurrencyDirective implements ControlValueAccessor, OnInit {
         valor.substr(valor.length - 2, 2);
     }
 
-    if (this.separadorDecimal === ',') {
-      this.onChange(valorMask.replace(/\./g, '').replace(',', '.'));
-    } else {
-      this.onChange(valorMask.replace(/\,/g, ''));
-    }
     if (this.prefixo !== '') {
       valorMask = this.prefixo + ' ' + valorMask;
     }
-    $event.target.value = valorMask;
+    
+    return valorMask;
   }
 
-  @HostListener('blur', ['$event']) 
-  onBlur($event: any) {
-    var pattern = '0' + this.separadorDecimal + '00';
-    if ($event.target.value.indexOf(pattern) === -1) {
-      return;
-    }
-    this.onChange('');
-    $event.target.value = '';
-  }
 }
