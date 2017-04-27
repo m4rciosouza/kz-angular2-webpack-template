@@ -45,6 +45,9 @@ export class KzMaskCurrencyDirective implements ControlValueAccessor, OnInit {
 
   writeValue(value: any): void {
     if (value) {
+      if (!isNaN(value)) {
+        value = value.toFixed(2);
+      }
       this.el.nativeElement.value = this.aplicarMascara(String(value));
     }
   }
